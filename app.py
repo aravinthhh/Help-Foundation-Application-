@@ -1,4 +1,3 @@
-
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -16,7 +15,7 @@ with open('final_model.joblib','rb') as file:
     kmeans_final= joblib.load(file)
 
 def prediction(input_list):
-    scaled_input = s.tranform([input_list])
+    scaled_input = s.transform([input_list])
     pca_input = pca_final.transform(scaled_input)
     output = model.predict(pca_input)[0]
 
@@ -47,5 +46,6 @@ def main():
     if st.button('Predict'):
         response = prediction(in_data)
         st.success(response)
+
 if __name__ == '__main__':
     main()

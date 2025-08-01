@@ -16,7 +16,6 @@ with open('final_model.joblib','rb') as file:
     kmeans_final= joblib.load(file)
 
 def prediction(input_list):
-
     scaled_input = s.tranform([input_list])
     pca_input = pca_final.transform(scaled_input)
     output = model.predict(pca_input)[0]

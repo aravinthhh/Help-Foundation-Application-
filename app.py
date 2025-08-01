@@ -28,7 +28,6 @@ def prediction(input_list):
         return 'Under-Development'
 
 def main():
-
     st.title('HELP NGO FOUNDATION')
     st.subheader('This application will give the status of the Country based on Socio-Economics and Health Factor')
 
@@ -48,7 +47,5 @@ def main():
     if st.button('Predict'):
         response = prediction(in_data)
         st.success(response)
-
-
 if __name__ == '__main__':
     main()
